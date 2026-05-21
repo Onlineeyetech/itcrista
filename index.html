@@ -432,6 +432,350 @@ section{padding:80px 0}
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .portfolio-grid{grid-template-columns:repeat(2,1fr)}
 }
+
+@media(max-width:768px){
+
+  /* Full Spectrum Digital */
+  .services-grid{
+    display:flex !important;
+    overflow-x:auto;
+    gap:18px;
+    padding-bottom:10px;
+    scroll-snap-type:x mandatory;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    padding-right:20px;
+  }
+
+  .services-grid::-webkit-scrollbar{
+    display:none;
+  }
+
+  .services-grid .svc-card{
+    min-width:85%;
+    scroll-snap-align:start;
+    flex-shrink:0;
+  }
+
+  /* Projects That */
+  .portfolio-grid{
+    display:flex !important;
+    overflow-x:auto;
+    gap:18px;
+    scroll-snap-type:x mandatory;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    padding-bottom:10px;
+    padding-right:20px;
+  }
+
+  .portfolio-grid::-webkit-scrollbar{
+    display:none;
+  }
+
+  .portfolio-grid .portfolio-item{
+    min-width:85%;
+    flex-shrink:0;
+    scroll-snap-align:start;
+  }
+
+  /* Our Battle-Tested */
+  .testi-track{
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+
+  .testi-track::-webkit-scrollbar{
+    display:none;
+  }
+
+  .testi-card{
+    min-width:88%;
+    scroll-snap-align:center;
+  }
+
+}  
+  /* =========================================================
+PREMIUM ABOUT SECTION
+========================================================= */
+
+.about-premium-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.about-stats-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+
+.about-stat-card{
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.4);
+  padding:28px;
+  border-radius:24px;
+  box-shadow:var(--shadow-md);
+}
+
+.about-stat-card h3{
+  font-size:34px;
+  margin-bottom:6px;
+  background:var(--gradient-hero);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.about-stat-card p{
+  color:var(--ink-60);
+  font-size:14px;
+}
+
+.about-premium-right{
+  position:relative;
+  min-height:520px;
+}
+
+.main-card{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:32px;
+  padding:40px;
+  box-shadow:var(--shadow-xl);
+}
+
+.main-card h3{
+  font-size:34px;
+  line-height:1.1;
+  margin:24px 0 14px;
+}
+
+.main-card p{
+  color:var(--ink-60);
+  line-height:1.8;
+}
+
+.mini-badge{
+  display:inline-flex;
+  padding:8px 18px;
+  border-radius:999px;
+  background:rgba(37,99,235,.1);
+  color:var(--blue);
+  font-size:13px;
+  font-weight:700;
+}
+
+.about-progress{
+  margin-top:24px;
+}
+
+.progress-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+.progress-bar{
+  height:8px;
+  background:var(--bg-alt);
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  background:var(--gradient-hero);
+}
+
+.floating-mini{
+  position:absolute;
+  background:#fff;
+  border-radius:18px;
+  padding:14px 20px;
+  box-shadow:var(--shadow-lg);
+  font-size:14px;
+  font-weight:600;
+}
+
+.mini-one{
+  top:-20px;
+  right:0;
+}
+
+.mini-two{
+  bottom:-20px;
+  left:0;
+}
+
+/* =========================================================
+US VS THEME
+========================================================= */
+
+.compare-grid{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:30px;
+  align-items:center;
+  margin-top:60px;
+}
+
+.compare-card{
+  padding:40px;
+  border-radius:32px;
+  background:#fff;
+  box-shadow:var(--shadow-lg);
+  border:1px solid var(--border);
+}
+
+.compare-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.compare-top h3{
+  font-size:28px;
+}
+
+.compare-top span{
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.bad span{
+  background:#fee2e2;
+  color:#dc2626;
+}
+
+.good span{
+  background:#dcfce7;
+  color:#16a34a;
+}
+
+.compare-card ul{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.compare-card li{
+  font-size:15px;
+  color:var(--ink-60);
+}
+
+.vs-divider{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:var(--gradient-hero);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  box-shadow:var(--shadow-blue);
+}
+
+/* =========================================================
+BEFORE AFTER
+========================================================= */
+
+.before-after-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:60px;
+}
+
+.ba-card{
+  background:#fff;
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  border:1px solid var(--border);
+}
+
+.ba-image-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  height:340px;
+}
+
+.ba-side{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:700;
+}
+
+.ba-side.before{
+  background:#dbeafe;
+  color:#2563EB;
+}
+
+.ba-side.after{
+  background:linear-gradient(135deg,#2563EB,#7C3AED);
+  color:#fff;
+}
+
+.ba-content{
+  padding:30px;
+}
+
+.ba-content h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.ba-content p{
+  color:var(--ink-60);
+  line-height:1.8;
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media(max-width:768px){
+
+  .about-premium-wrap,
+  .compare-grid,
+  .before-after-grid{
+    grid-template-columns:1fr;
+  }
+
+  .vs-divider{
+    margin:auto;
+  }
+
+  .about-premium-right{
+    min-height:auto;
+  }
+
+  .floating-mini{
+    position:relative;
+    margin-top:16px;
+    display:inline-flex;
+  }
+
+  .main-card h3{
+    font-size:28px;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -528,6 +872,105 @@ section{padding:80px 0}
   </div>
 </section>
 
+
+  <!-- ══════════════════════════════════════════════════════════
+     ABOUT US PREMIUM
+══════════════════════════════════════════════════════════ -->
+<section id="about-premium" class="section">
+  <div class="container">
+
+    <div class="about-premium-wrap">
+
+      <div class="about-premium-left reveal-left">
+
+        <span class="section-label">About ITcrista</span>
+
+        <h2 class="section-title">
+          We Build Brands<br>
+          That Feel <em>Premium</em>
+        </h2>
+
+        <p class="section-body">
+          We’re not just developers. We’re growth-focused digital architects creating world-class ecommerce experiences, conversion-driven websites, and scalable systems for ambitious brands worldwide.
+        </p>
+
+        <div class="about-stats-grid">
+
+          <div class="about-stat-card">
+            <h3>250+</h3>
+            <p>Projects Delivered</p>
+          </div>
+
+          <div class="about-stat-card">
+            <h3>98%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+
+          <div class="about-stat-card">
+            <h3>21 Days</h3>
+            <p>Avg. Delivery</p>
+          </div>
+
+          <div class="about-stat-card">
+            <h3>40+</h3>
+            <p>Global Clients</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="about-premium-right reveal-right">
+
+        <div class="about-floating-card main-card">
+
+          <div class="mini-badge">
+            Premium Development Agency
+          </div>
+
+          <h3>High-Converting Digital Experiences</h3>
+
+          <p>
+            Every interface is engineered for conversion, trust, speed, and premium brand positioning.
+          </p>
+
+          <div class="about-progress">
+            <div class="progress-row">
+              <span>Performance</span>
+              <span>98%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:98%"></div>
+            </div>
+          </div>
+
+          <div class="about-progress">
+            <div class="progress-row">
+              <span>SEO Optimization</span>
+              <span>95%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:95%"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="floating-mini mini-one">
+          ⚡ Fast Delivery
+        </div>
+
+        <div class="floating-mini mini-two">
+          🚀 Growth Focused
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- TRUSTED BY -->
 <section class="trusted-section">
   <div class="container">
@@ -615,6 +1058,67 @@ section{padding:80px 0}
   </div>
 </section>
 
+  <!-- ══════════════════════════════════════════════════════════
+     US VS THEME
+══════════════════════════════════════════════════════════ -->
+
+<section id="us-vs-theme" class="section">
+
+  <div class="container">
+
+    <div class="reveal">
+      <span class="section-label">Custom vs Template</span>
+
+      <h2 class="section-title">
+        Why Brands Choose<br>
+        <em>Custom Development</em>
+      </h2>
+    </div>
+
+    <div class="compare-grid">
+
+      <div class="compare-card bad">
+        <div class="compare-top">
+          <h3>Cheap Theme</h3>
+          <span>Basic</span>
+        </div>
+
+        <ul>
+          <li>❌ Slow Speed</li>
+          <li>❌ Generic Design</li>
+          <li>❌ Poor SEO Structure</li>
+          <li>❌ Bloated Code</li>
+          <li>❌ Weak Conversion UX</li>
+          <li>❌ Limited Scalability</li>
+        </ul>
+      </div>
+
+      <div class="vs-divider">
+        VS
+      </div>
+
+      <div class="compare-card good">
+        <div class="compare-top">
+          <h3>ITcrista Custom Build</h3>
+          <span>Premium</span>
+        </div>
+
+        <ul>
+          <li>✅ Ultra Fast Performance</li>
+          <li>✅ Unique Brand Identity</li>
+          <li>✅ SEO Optimized Structure</li>
+          <li>✅ Clean Scalable Code</li>
+          <li>✅ Conversion-Focused UX</li>
+          <li>✅ Enterprise Ready</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 <!-- STATS -->
 <section class="stats-section">
   <div class="container">
@@ -673,6 +1177,78 @@ section{padding:80px 0}
       <div class="process-step reveal rd3"><div class="step-num">07</div><span class="step-icon">🛡️</span><div class="step-title">Ongoing Support</div><p class="step-desc">Continued optimization, updates, and dedicated support post-launch.</p></div>
     </div>
   </div>
+</section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+     BEFORE AFTER
+══════════════════════════════════════════════════════════ -->
+
+<section id="before-after" class="section">
+
+  <div class="container">
+
+    <div class="reveal">
+      <span class="section-label">Transformation</span>
+
+      <h2 class="section-title">
+        Before & After<br>
+        <em>Brand Transformation</em>
+      </h2>
+    </div>
+
+    <div class="before-after-grid">
+
+      <div class="ba-card reveal">
+
+        <div class="ba-image-wrap">
+
+          <div class="ba-side before">
+            <span>Before</span>
+          </div>
+
+          <div class="ba-side after">
+            <span>After</span>
+          </div>
+
+        </div>
+
+        <div class="ba-content">
+          <h3>Luxury Ecommerce Redesign</h3>
+          <p>
+            Complete UI overhaul with premium UX, faster speed, and conversion-focused shopping flow.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="ba-card reveal">
+
+        <div class="ba-image-wrap">
+
+          <div class="ba-side before">
+            <span>Before</span>
+          </div>
+
+          <div class="ba-side after">
+            <span>After</span>
+          </div>
+
+        </div>
+
+        <div class="ba-content">
+          <h3>Modern Corporate Website</h3>
+          <p>
+            Transformed outdated layout into a premium modern brand experience.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <!-- TESTIMONIALS -->
