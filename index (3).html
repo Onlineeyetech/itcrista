@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITcrista infoX — Premium IT & Web Development Agency</title>
+<meta name="description" content="ITcrista infoX — Ultra-premium IT agency specializing in custom web development, ecommerce, Shopify, WordPress, and digital transformation for global brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN SYSTEM — ITcrista infoX
+   Light Premium: Pearl White + Ink Navy + Electric Indigo
+   ============================================================ */
+:root {
+  --bg:            #F7F8FC;
+  --bg-alt:        #ECEEF5;
+  --surface:       #FFFFFF;
+  --surface-tint:  rgba(255,255,255,0.85);
+  --ink:           #0A0F1E;
+  --ink-60:        #4A5169;
+  --ink-30:        #9BA3BA;
+  --border:        rgba(10,15,30,0.08);
+  --border-strong: rgba(10,15,30,0.15);
+  --blue:          #2563EB;
+  --blue-light:    #3B82F6;
+  --indigo:        #4F46E5;
+  --cyan:          #06B6D4;
+  --purple:        #7C3AED;
+  --emerald:       #059669;
+  --amber:         #D97706;
+  --gradient-hero: linear-gradient(135deg,#2563EB 0%,#4F46E5 50%,#7C3AED 100%);
+  --gradient-card: linear-gradient(135deg,rgba(37,99,235,.05) 0%,rgba(124,58,237,.05) 100%);
+  --shadow-sm:     0 1px 3px rgba(10,15,30,.08),0 1px 2px rgba(10,15,30,.05);
+  --shadow-md:     0 4px 16px rgba(10,15,30,.10),0 2px 6px rgba(10,15,30,.06);
+  --shadow-lg:     0 12px 40px rgba(10,15,30,.13),0 4px 12px rgba(10,15,30,.07);
+  --shadow-xl:     0 24px 64px rgba(10,15,30,.16);
+  --shadow-blue:   0 8px 32px rgba(37,99,235,.25);
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px; --r-full: 9999px;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --nav-h: 72px;
+  --section-py: clamp(72px, 9vw, 128px);
+}
+
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+ul,ol{list-style:none}
+
+/* ── SCROLLBAR ────────────────────────────────────────────── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-alt)}
+::-webkit-scrollbar-thumb{background:var(--indigo);border-radius:3px}
+
+/* ── UTILITY ──────────────────────────────────────────────── */
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(16px,5vw,48px)}
+.section{padding:var(--section-py) 0}
+.section-label{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:8px}
+.section-label::before{content:'';display:block;width:20px;height:2px;background:var(--gradient-hero);border-radius:2px}
+.section-title{font-size:clamp(30px,4.5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-top:12px}
+.section-title em{font-family:var(--font-serif);font-style:italic;font-weight:400;background:var(--gradient-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-body{font-size:clamp(15px,1.5vw,17px);color:var(--ink-60);max-width:560px;margin-top:16px;line-height:1.75}
+.tag{display:inline-block;padding:4px 12px;border-radius:var(--r-full);font-size:12px;font-weight:600;letter-spacing:.04em;background:rgba(37,99,235,.09);color:var(--blue)}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--r-full);font-size:12px;font-weight:600;background:var(--surface);border:1px solid var(--border-strong);box-shadow:var(--shadow-sm)}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 8px #10B981}
+
+/* ── BTN ──────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;border-radius:var(--r-full);font-size:15px;font-weight:600;cursor:pointer;border:none;transition:all .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;inset:0;border-radius:inherit;background:rgba(255,255,255,0);transition:background .25s}
+.btn:hover::after{background:rgba(255,255,255,.12)}
+.btn-primary{background:var(--gradient-hero);color:#fff;box-shadow:var(--shadow-blue)}
+.btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 12px 40px rgba(37,99,235,.4)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border-strong)}
+.btn-outline:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
+.btn-sm{padding:10px 20px;font-size:13px}
+.btn svg{transition:transform .3s}
+.btn:hover svg{transform:translateX(3px)}
+
+/* ── CARD BASE ────────────────────────────────────────────── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+
+/* ── NAV ──────────────────────────────────────────────────── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;transition:all .4s}
+#nav.scrolled{background:rgba(247,248,252,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;letter-spacing:-.04em}
+.nav-logo-icon{width:36px;height:36px;border-radius:10px;background:var(--gradient-hero);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-blue);flex-shrink:0}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--ink-60);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-burger span{display:block;height:2px;width:22px;background:var(--ink);border-radius:2px;transition:all .3s}
+
+/* ── MOBILE MENU ──────────────────────────────────────────── */
+#mobile-menu{position:fixed;inset:0;background:#fff;z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:all .4s}
+#mobile-menu.open{opacity:1;pointer-events:all}
+#mobile-menu a{font-size:24px;font-weight:600;color:var(--ink);letter-spacing:-.02em;transition:color .2s}
+#mobile-menu a:hover{color:var(--blue)}
+.menu-close{position:absolute;top:24px;right:24px;cursor:pointer;font-size:24px;color:var(--ink)}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:var(--nav-h);background:var(--bg);position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.18}
+.hero-blob-1{width:600px;height:600px;background:radial-gradient(circle,#2563EB,transparent 70%);top:-100px;right:-100px;animation:float1 8s ease-in-out infinite}
+.hero-blob-2{width:500px;height:500px;background:radial-gradient(circle,#7C3AED,transparent 70%);bottom:-100px;left:-100px;animation:float2 10s ease-in-out infinite}
+.hero-blob-3{width:400px;height:400px;background:radial-gradient(circle,#06B6D4,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:float1 12s ease-in-out infinite reverse}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black 0%,transparent 100%)}
+@keyframes float1{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+@keyframes float2{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(25px) scale(.95)}}
+
+.hero-layout{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:64px;min-height:calc(100vh - var(--nav-h));padding:60px 0}
+.hero-content{position:relative;z-index:2}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.hero-title{font-size:clamp(38px,5.5vw,72px);font-weight:700;letter-spacing:-.04em;line-height:1.05}
+.hero-title .line-serif{font-family:var(--font-serif);font-style:italic;font-weight:400;background:var(--gradient-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:clamp(16px,1.6vw,18px);color:var(--ink-60);max-width:480px;margin:24px 0 40px;line-height:1.8}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid var(--border)}
+.stat-val{font-size:32px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.stat-val span{background:var(--gradient-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-lbl{font-size:13px;color:var(--ink-60);margin-top:6px;font-weight:500}
+
+/* Hero Visual */
+.hero-visual{position:relative;z-index:2;display:flex;justify-content:center}
+.hero-phone-wrap{position:relative;width:340px;height:520px}
+.hero-card-main{position:absolute;top:0;left:50%;transform:translateX(-50%);width:280px;background:var(--surface);border:1px solid var(--border-strong);border-radius:24px;padding:24px;box-shadow:var(--shadow-xl);animation:heroFloat 6s ease-in-out infinite}
+@keyframes heroFloat{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-16px)}}
+.hero-card-chip{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-60);margin-bottom:20px}
+.hero-card-chip-dot{width:8px;height:8px;border-radius:50%;background:#10B981;box-shadow:0 0 10px #10B981}
+.hero-metric-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px}
+.hero-metric-big{font-size:42px;font-weight:700;letter-spacing:-.04em}
+.hero-mini-bars{display:flex;align-items:flex-end;gap:5px}
+.hero-mini-bar{width:10px;border-radius:3px;background:var(--gradient-hero)}
+.hero-progress-row{margin-top:16px}
+.hero-progress-lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-60);margin-bottom:6px}
+.hero-progress-track{height:6px;background:var(--bg-alt);border-radius:3px}
+.hero-progress-fill{height:100%;border-radius:3px;background:var(--gradient-hero);animation:fillUp 2s .5s both ease-out}
+@keyframes fillUp{from{width:0!important}to{}}
+.hero-card-float{position:absolute;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--r-md);padding:14px 18px;box-shadow:var(--shadow-md)}
+.hero-card-f1{bottom:60px;right:-40px;width:160px;animation:heroFloat 7s 1s ease-in-out infinite}
+.hero-card-f2{top:140px;left:-60px;width:150px;animation:heroFloat 8s 2s ease-in-out infinite reverse}
+.hcf-label{font-size:11px;color:var(--ink-60);margin-bottom:4px}
+.hcf-value{font-size:20px;font-weight:700;letter-spacing:-.03em}
+.hcf-sub{font-size:11px;color:#10B981;font-weight:600;margin-top:2px}
+
+/* ── TRUSTED BY ───────────────────────────────────────────── */
+#trusted{padding:40px 0 60px;border-bottom:1px solid var(--border)}
+.trusted-lbl{text-align:center;font-size:13px;color:var(--ink-30);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:32px}
+.logos-track-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
+.logos-track{display:flex;gap:56px;animation:ticker 28s linear infinite;width:max-content}
+.logos-track:hover{animation-play-state:paused}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.logo-item{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--ink-30);letter-spacing:-.02em;white-space:nowrap;transition:color .2s;cursor:default}
+.logo-item:hover{color:var(--ink-60)}
+.logo-item svg{opacity:.5}
+
+/* ── SERVICES ─────────────────────────────────────────────── */
+#services{background:var(--surface)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:56px}
+.svc-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;transition:all .4s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;cursor:default}
+.svc-card::before{content:'';position:absolute;inset:0;background:var(--gradient-card);opacity:0;transition:opacity .4s}
+.svc-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-6px);border-color:rgba(37,99,235,.2)}
+.svc-card:hover::before{opacity:1}
+.svc-icon{width:52px;height:52px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;z-index:1}
+.svc-title{font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px;position:relative;z-index:1}
+.svc-desc{font-size:14px;color:var(--ink-60);line-height:1.7;position:relative;z-index:1}
+.svc-arrow{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--blue);margin-top:16px;opacity:0;transform:translateY(4px);transition:all .3s;position:relative;z-index:1}
+.svc-card:hover .svc-arrow{opacity:1;transform:translateY(0)}
+
+/* ── WHY US ───────────────────────────────────────────────── */
+#why{background:var(--bg)}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:56px}
+.why-features{display:grid;gap:24px}
+.why-item{display:flex;gap:20px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);transition:all .3s}
+.why-item:hover{box-shadow:var(--shadow-md);border-color:rgba(37,99,235,.2);transform:translateX(4px)}
+.why-icon{width:44px;height:44px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-item-title{font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-.02em}
+.why-item-desc{font-size:14px;color:var(--ink-60);line-height:1.7}
+.why-visual{position:sticky;top:calc(var(--nav-h) + 40px)}
+.why-big-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:40px;box-shadow:var(--shadow-lg)}
+.why-big-title{font-size:28px;font-weight:700;letter-spacing:-.04em;margin-bottom:8px}
+.why-big-sub{font-size:14px;color:var(--ink-60);margin-bottom:32px}
+.why-metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.why-metric{background:var(--bg);border-radius:var(--r-md);padding:20px;text-align:center}
+.why-metric-val{font-size:28px;font-weight:700;letter-spacing:-.04em;background:var(--gradient-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.why-metric-lbl{font-size:12px;color:var(--ink-60);margin-top:4px;font-weight:500}
+.why-bar-row{margin-bottom:14px}
+.why-bar-lbl{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;font-weight:500}
+.why-bar-track{height:8px;background:var(--bg-alt);border-radius:4px}
+.why-bar-fill{height:100%;border-radius:4px;background:var(--gradient-hero)}
+
+/* ── PORTFOLIO ────────────────────────────────────────────── */
+#portfolio{background:var(--surface)}
+.portfolio-filters{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 40px}
+.filter-btn{padding:9px 20px;border-radius:var(--r-full);font-size:13px;font-weight:600;border:1.5px solid var(--border-strong);background:transparent;color:var(--ink-60);cursor:pointer;transition:all .25s}
+.filter-btn.active,.filter-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.portfolio-item{border-radius:var(--r-lg);overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;background:var(--bg-alt)}
+.portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.34,1.56,.64,1)}
+.portfolio-item:hover img{transform:scale(1.08)}
+.portfolio-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,15,30,.85) 0%,transparent 60%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.portfolio-item:hover .portfolio-overlay{opacity:1}
+.portfolio-overlay h3{color:#fff;font-size:18px;font-weight:700;letter-spacing:-.02em}
+.portfolio-overlay p{color:rgba(255,255,255,.7);font-size:13px;margin-top:4px}
+.portfolio-tag{display:inline-block;margin-top:10px;padding:4px 12px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:var(--r-full);font-size:11px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.2)}
+/* Placeholder portfolio colors */
+.port-bg-1{background:linear-gradient(135deg,#2563EB20,#4F46E520);display:flex;align-items:center;justify-content:center}
+.port-bg-2{background:linear-gradient(135deg,#7C3AED20,#06B6D420);display:flex;align-items:center;justify-content:center}
+.port-bg-3{background:linear-gradient(135deg,#05966920,#2563EB20);display:flex;align-items:center;justify-content:center}
+.port-bg-4{background:linear-gradient(135deg,#D9770620,#7C3AED20);display:flex;align-items:center;justify-content:center}
+.port-bg-5{background:linear-gradient(135deg,#06B6D420,#4F46E520);display:flex;align-items:center;justify-content:center}
+.port-bg-6{background:linear-gradient(135deg,#2563EB20,#05966920);display:flex;align-items:center;justify-content:center}
+.port-placeholder{text-align:center;padding:32px}
+.port-placeholder .icon{font-size:48px;margin-bottom:12px}
+.port-placeholder h4{font-size:16px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.port-placeholder p{font-size:13px;color:var(--ink-60);margin-top:4px}
+
+/* ── TESTIMONIALS ─────────────────────────────────────────── */
+#testimonials{background:var(--bg);overflow:hidden}
+.testi-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:24px}
+.testi-track-wrap{overflow:hidden}
+.testi-track{display:flex;gap:24px;transition:transform .6s cubic-bezier(.76,0,.24,1)}
+.testi-card{flex-shrink:0;width:400px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow-sm)}
+.testi-stars{display:flex;gap:3px;margin-bottom:20px}
+.testi-star{width:16px;height:16px;color:#F59E0B}
+.testi-text{font-size:16px;line-height:1.75;color:var(--ink);margin-bottom:24px}
+.testi-text::before{content:'\201C';font-family:var(--font-serif);font-size:48px;color:var(--blue);line-height:.5;display:block;margin-bottom:8px}
+.testi-author{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--border)}
+.testi-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;flex-shrink:0}
+.testi-name{font-weight:700;font-size:15px;letter-spacing:-.02em}
+.testi-role{font-size:12px;color:var(--ink-60);margin-top:2px}
+.testi-controls{display:flex;gap:12px;margin-top:40px;justify-content:center}
+.testi-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border-strong);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;color:var(--ink)}
+.testi-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.testi-dots{display:flex;gap:8px;align-items:center;margin-top:24px;justify-content:center}
+.testi-dot{width:8px;height:8px;border-radius:4px;background:var(--border-strong);cursor:pointer;transition:all .3s}
+.testi-dot.active{width:24px;background:var(--blue)}
+
+/* ── PROCESS ──────────────────────────────────────────────── */
+#process{background:var(--surface)}
+.process-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:64px;position:relative}
+.process-steps::before{content:'';position:absolute;top:32px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--blue),var(--indigo),var(--purple));border-radius:1px}
+.process-step{text-align:center;padding:0 16px;position:relative}
+.process-num{width:64px;height:64px;border-radius:50%;background:var(--surface);border:2px solid var(--border-strong);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:20px;font-weight:700;position:relative;z-index:1;transition:all .4s;box-shadow:var(--shadow-md)}
+.process-step:hover .process-num{background:var(--gradient-hero);color:#fff;border-color:transparent;box-shadow:var(--shadow-blue);transform:scale(1.1)}
+.process-step-title{font-size:15px;font-weight:700;margin-bottom:8px;letter-spacing:-.02em}
+.process-step-desc{font-size:12px;color:var(--ink-60);line-height:1.6}
+
+/* ── TECH ─────────────────────────────────────────────────── */
+#tech{background:var(--bg)}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px;margin-top:56px}
+.tech-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:24px 16px;text-align:center;transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.tech-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);border-color:rgba(37,99,235,.2)}
+.tech-logo{font-size:36px;margin-bottom:10px;display:block}
+.tech-name{font-size:13px;font-weight:700;letter-spacing:-.01em}
+.tech-type{font-size:11px;color:var(--ink-30);margin-top:3px}
+
+/* ── PRICING ──────────────────────────────────────────────── */
+#pricing{background:var(--surface)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.pricing-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-xl);padding:40px;transition:all .4s;position:relative;overflow:hidden}
+.pricing-card.featured{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:var(--shadow-xl)}
+.pricing-card.featured .pricing-desc{color:rgba(255,255,255,.6)}
+.pricing-card.featured .pricing-feature{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.08)}
+.pricing-badge{position:absolute;top:24px;right:24px;background:var(--gradient-hero);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;padding:4px 12px;border-radius:var(--r-full)}
+.pricing-plan{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.pricing-card.featured .pricing-plan{color:#06B6D4}
+.pricing-price{font-size:48px;font-weight:700;letter-spacing:-.05em;line-height:1;margin:16px 0}
+.pricing-price sup{font-size:24px;font-weight:600;vertical-align:top;margin-top:8px}
+.pricing-price sub{font-size:16px;font-weight:400;opacity:.6}
+.pricing-desc{font-size:14px;color:var(--ink-60);margin-bottom:32px;line-height:1.7}
+.pricing-features{margin-bottom:32px}
+.pricing-feature{display:flex;gap:12px;align-items:flex-start;font-size:14px;padding:10px 0;border-bottom:1px solid var(--border)}
+.pricing-feature:last-child{border-bottom:none}
+.pf-check{width:18px;height:18px;border-radius:50%;background:rgba(5,150,105,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pricing-card.featured .pf-check{background:rgba(6,182,212,.15)}
+
+/* ── FAQ ──────────────────────────────────────────────────── */
+#faq{background:var(--bg)}
+.faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.faq-list{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:16px;font-size:16px;font-weight:600;letter-spacing:-.02em;transition:color .2s}
+.faq-question:hover{color:var(--blue)}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border-strong);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;font-size:16px;color:var(--ink-60)}
+.faq-item.open .faq-icon{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-answer{max-height:300px}
+.faq-answer p{font-size:15px;color:var(--ink-60);line-height:1.75;padding:0 0 20px}
+.faq-cta-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:40px;text-align:center;box-shadow:var(--shadow-md);position:sticky;top:calc(var(--nav-h) + 40px)}
+.faq-cta-icon{width:64px;height:64px;border-radius:var(--r-md);background:var(--gradient-hero);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:var(--shadow-blue)}
+
+/* ── CTA BANNER ───────────────────────────────────────────── */
+#cta-banner{background:var(--ink);color:#fff;overflow:hidden;position:relative}
+.cta-bg{position:absolute;inset:0;overflow:hidden}
+.cta-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.2}
+.cta-blob-1{width:500px;height:500px;background:radial-gradient(circle,#2563EB,transparent 70%);top:-100px;left:-100px}
+.cta-blob-2{width:500px;height:500px;background:radial-gradient(circle,#7C3AED,transparent 70%);bottom:-100px;right:-100px}
+.cta-inner{position:relative;z-index:1;text-align:center;padding:100px 0}
+.cta-inner .section-label{justify-content:center}
+.cta-inner .section-label{color:#06B6D4}
+.cta-inner .section-label::before{background:linear-gradient(90deg,#06B6D4,#2563EB)}
+.cta-title{font-size:clamp(32px,5vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1.05;margin-top:12px;color:#fff}
+.cta-title em{font-family:var(--font-serif);font-style:italic;font-weight:400;color:#06B6D4}
+.cta-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.6);max-width:520px;margin:20px auto 40px;line-height:1.8}
+.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-white:hover{background:var(--bg-alt);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.25);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5);transform:translateY(-2px)}
+.cta-trust{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.cta-trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);font-weight:500}
+.cta-trust-icon{width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+#footer{background:#060D1A;color:rgba(255,255,255,.65)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;padding:80px 0 64px;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-brand{}
+.footer-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:16px}
+.footer-tagline{font-size:14px;line-height:1.75;margin-bottom:28px;max-width:280px}
+.footer-socials{display:flex;gap:10px}
+.social-btn{width:36px;height:36px;border-radius:var(--r-sm);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;color:rgba(255,255,255,.5)}
+.social-btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.footer-col-title{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-bottom:20px}
+.footer-links{display:flex;flex-direction:column;gap:12px}
+.footer-links a{font-size:14px;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:13px}
+.footer-legal{display:flex;gap:20px;font-size:13px}
+.footer-legal a{transition:color .2s}
+.footer-legal a:hover{color:#fff}
+
+/* ── ANIMATIONS ───────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .7s,transform .7s}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity .7s,transform .7s}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.stagger-1{transition-delay:.1s}
+.stagger-2{transition-delay:.2s}
+.stagger-3{transition-delay:.3s}
+.stagger-4{transition-delay:.4s}
+.stagger-5{transition-delay:.5s}
+.stagger-6{transition-delay:.6s}
+
+/* counter */
+@keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── CURSOR ───────────────────────────────────────────────── */
+#cursor{position:fixed;pointer-events:none;z-index:9999;mix-blend-mode:multiply}
+#cursor-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;position:absolute;top:-4px;left:-4px;transition:transform .1s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(37,99,235,.4);border-radius:50%;position:absolute;top:-18px;left:-18px;transition:all .18s cubic-bezier(.34,1.56,.64,1)}
+body.cursor-hover #cursor-ring{width:52px;height:52px;top:-26px;left:-26px;border-color:var(--blue);background:rgba(37,99,235,.05)}
+
+/* ── PARTICLE CANVAS ──────────────────────────────────────── */
+#particle-canvas{position:absolute;inset:0;pointer-events:none;opacity:.35}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media(max-width:1100px){
+  .hero-layout{grid-template-columns:1fr;gap:40px;padding:40px 0 60px}
+  .hero-visual{display:none}
+  .why-layout{grid-template-columns:1fr}
+  .why-visual{position:static}
+  .faq-layout{grid-template-columns:1fr}
+  .faq-cta-block{position:static}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px}
+  .pricing-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:repeat(3,1fr);gap:32px}
+  .process-steps::before{display:none}
+}
+@media(max-width:768px){
+  :root{--nav-h:60px}
+  .nav-links,.nav-cta{display:none}
+  .nav-burger{display:flex}
+  .hero-stats{gap:24px}
+  .services-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .tech-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .testi-card{width:calc(100vw - 48px)}
+  .trusted-lbl{display:none}
+}
+@media(max-width:480px){
+  .process-steps{grid-template-columns:1fr 1fr}
+  .tech-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{flex-direction:column;gap:20px}
+  .pricing-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor"><div id="cursor-dot"></div><div id="cursor-ring"></div></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L17 6V14L10 18L3 14V6L10 2Z" fill="white" fill-opacity=".9"/><path d="M10 6L14 8.5V13.5L10 16L6 13.5V8.5L10 6Z" fill="white"/></svg>
+        </div>
+        ITcrista <span>infoX</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Work</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-outline btn-sm">Contact</a>
+        <a href="#cta-banner" class="btn btn-primary btn-sm">Get a Quote
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="nav-burger" id="nav-burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <div class="menu-close" onclick="toggleMenu()">✕</div>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#portfolio" onclick="toggleMenu()">Work</a>
+  <a href="#process" onclick="toggleMenu()">Process</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#cta-banner" onclick="toggleMenu()" class="btn btn-primary">Get a Quote →</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-grid"></div>
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+  </div>
+  <div class="container">
+    <div class="hero-layout">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="badge"><span class="dot"></span>Available for new projects</div>
+          <span class="tag">Est. 2018</span>
+        </div>
+        <h1 class="hero-title">
+          We Build Digital<br>
+          Products That<br>
+          <span class="line-serif">Actually Convert</span>
+        </h1>
+        <p class="hero-sub">ITcrista infoX is a premium IT &amp; web development agency crafting high-performance websites, ecommerce stores, and digital experiences for global brands &amp; startups.</p>
+        <div class="hero-actions">
+          <a href="#cta-banner" class="btn btn-primary">Start Your Project
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8H12M12 8L8.5 4.5M12 8L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#portfolio" class="btn btn-outline">View Our Work</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-val"><span class="counter" data-target="250">0</span>+</div>
+            <div class="stat-lbl">Projects Delivered</div>
+          </div>
+          <div>
+            <div class="stat-val"><span class="counter" data-target="98">0</span>%</div>
+            <div class="stat-lbl">Client Satisfaction</div>
+          </div>
+          <div>
+            <div class="stat-val"><span class="counter" data-target="6">0</span>+</div>
+            <div class="stat-lbl">Years Experience</div>
+          </div>
+          <div>
+            <div class="stat-val"><span class="counter" data-target="40">0</span>+</div>
+            <div class="stat-lbl">Global Clients</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-phone-wrap">
+          <div class="hero-card-main">
+            <div class="hero-card-chip"><span class="hero-card-chip-dot"></span>Project Performance</div>
+            <div class="hero-metric-row">
+              <div>
+                <div style="font-size:12px;color:var(--ink-60);margin-bottom:4px">Revenue Growth</div>
+                <div class="hero-metric-big">+147%</div>
+              </div>
+              <div class="hero-mini-bars">
+                <div class="hero-mini-bar" style="height:24px"></div>
+                <div class="hero-mini-bar" style="height:36px"></div>
+                <div class="hero-mini-bar" style="height:28px"></div>
+                <div class="hero-mini-bar" style="height:48px"></div>
+                <div class="hero-mini-bar" style="height:40px"></div>
+                <div class="hero-mini-bar" style="height:56px"></div>
+              </div>
+            </div>
+            <div class="hero-progress-row">
+              <div class="hero-progress-lbl"><span>Page Speed</span><span>98/100</span></div>
+              <div class="hero-progress-track"><div class="hero-progress-fill" style="width:98%"></div></div>
+            </div>
+            <div class="hero-progress-row" style="margin-top:12px">
+              <div class="hero-progress-lbl"><span>Conversion Rate</span><span>4.7%</span></div>
+              <div class="hero-progress-track"><div class="hero-progress-fill" style="width:74%"></div></div>
+            </div>
+            <div class="hero-progress-row" style="margin-top:12px">
+              <div class="hero-progress-lbl"><span>SEO Score</span><span>95/100</span></div>
+              <div class="hero-progress-track"><div class="hero-progress-fill" style="width:95%"></div></div>
+            </div>
+          </div>
+          <div class="hero-card-float hero-card-f1">
+            <div class="hcf-label">Projects Live</div>
+            <div class="hcf-value">250+</div>
+            <div class="hcf-sub">↑ 32 this year</div>
+          </div>
+          <div class="hero-card-float hero-card-f2">
+            <div class="hcf-label">Avg Delivery</div>
+            <div class="hcf-value">21 days</div>
+            <div class="hcf-sub">⚡ On schedule</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     TRUSTED BY
+══════════════════════════════════════════════════════════ -->
+<section id="trusted">
+  <div class="container">
+    <div class="trusted-lbl">Trusted by ambitious brands worldwide</div>
+    <div class="logos-track-wrap">
+      <div class="logos-track" id="logos-track">
+        <!-- set 1 -->
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>NovaTech</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4"/></svg>StyleHive</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,22 2,22"/></svg>Finlance</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="12" rx="10" ry="6"/></svg>CloudAxis</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12h20M12 2v20"/></svg>Amplio</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>VexaShop</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="8"/></svg>OrbitSaaS</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,22 2,22"/></svg>PrismBrand</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>LuxeCart</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4"/></svg>Meridian Co.</div>
+        <!-- set 2 (duplicate for seamless loop) -->
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>NovaTech</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4"/></svg>StyleHive</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,22 2,22"/></svg>Finlance</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="12" rx="10" ry="6"/></svg>CloudAxis</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12h20M12 2v20"/></svg>Amplio</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>VexaShop</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="8"/></svg>OrbitSaaS</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,22 2,22"/></svg>PrismBrand</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>LuxeCart</div>
+        <div class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4"/></svg>Meridian Co.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════════════════ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Full-Spectrum Digital<br><em>Development Services</em></h2>
+      <p class="section-body">From pixel-perfect UI to lightning-fast ecommerce — we engineer digital solutions that drive real business results.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="svc-card reveal stagger-1">
+        <div class="svc-icon" style="background:rgba(37,99,235,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h6M7 16h8"/></svg>
+        </div>
+        <div class="svc-title">Custom Website Development</div>
+        <div class="svc-desc">Tailor-made, high-performance websites built from scratch with modern technologies — designed to engage and convert.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+      <div class="svc-card reveal stagger-2">
+        <div class="svc-icon" style="background:rgba(124,58,237,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </div>
+        <div class="svc-title">Ecommerce Store Development</div>
+        <div class="svc-desc">Revenue-optimized online stores with seamless UX, blazing speed, and checkout flows that eliminate friction.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+      <div class="svc-card reveal stagger-3">
+        <div class="svc-icon" style="background:rgba(5,150,105,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="svc-title">Shopify Development</div>
+        <div class="svc-desc">Expert Shopify &amp; Shopify Plus development — custom themes, app integrations, and performance optimization.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+      <div class="svc-card reveal stagger-4">
+        <div class="svc-icon" style="background:rgba(6,182,212,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="svc-title">WordPress Development</div>
+        <div class="svc-desc">Powerful WordPress solutions — bespoke themes, Gutenberg blocks, headless WordPress, and WP optimization.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+      <div class="svc-card reveal stagger-5">
+        <div class="svc-icon" style="background:rgba(217,119,6,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="svc-title">UI/UX Design</div>
+        <div class="svc-desc">Research-driven, conversion-focused design — wireframes, prototypes, design systems, and interactive mockups.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+      <div class="svc-card reveal stagger-6">
+        <div class="svc-icon" style="background:rgba(79,70,229,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="1.8" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="svc-title">SEO &amp; Speed Optimization</div>
+        <div class="svc-desc">Technical SEO audits, Core Web Vitals optimization, and structured data implementation to dominate search rankings.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+      <div class="svc-card reveal stagger-1">
+        <div class="svc-icon" style="background:rgba(37,99,235,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+        </div>
+        <div class="svc-title">WooCommerce Development</div>
+        <div class="svc-desc">Custom WooCommerce stores with advanced plugins, payment gateways, and scalable architecture for growing brands.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+      <div class="svc-card reveal stagger-2">
+        <div class="svc-icon" style="background:rgba(124,58,237,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <div class="svc-title">Magento Development</div>
+        <div class="svc-desc">Enterprise-grade Magento 2 solutions for complex ecommerce needs — multi-store, multi-currency, B2B &amp; B2C.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+      <div class="svc-card reveal stagger-3">
+        <div class="svc-icon" style="background:rgba(5,150,105,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="svc-title">Maintenance &amp; Support</div>
+        <div class="svc-desc">Ongoing care plans — 24/7 monitoring, security patches, backups, updates, and dedicated technical support.</div>
+        <div class="svc-arrow">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     WHY US
+══════════════════════════════════════════════════════════ -->
+<section id="why" class="section">
+  <div class="container">
+    <div class="why-layout">
+      <div class="why-features reveal-left">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title" style="max-width:460px">Why Global Brands<br>Choose <em>ITcrista infoX</em></h2>
+        <p class="section-body">We don't just build websites — we build growth engines. Every pixel, line of code, and decision is made with your ROI in mind.</p>
+        <div style="margin-top:40px;display:grid;gap:16px">
+          <div class="why-item">
+            <div class="why-icon" style="background:rgba(37,99,235,.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div>
+              <div class="why-item-title">6+ Years of Proven Excellence</div>
+              <div class="why-item-desc">Deep expertise across 12+ industries with 250+ delivered projects and a track record of measurable results.</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" style="background:rgba(124,58,237,.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div>
+              <div class="why-item-title">Lightning-Fast Delivery</div>
+              <div class="why-item-desc">Average project turnaround of 21 days without compromising on quality, code, or design standards.</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" style="background:rgba(5,150,105,.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="why-item-title">Dedicated Project Teams</div>
+              <div class="why-item-desc">You get a dedicated project manager, lead developer, and designer — not a ticket queue.</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" style="background:rgba(6,182,212,.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="why-item-title">Performance-First Development</div>
+              <div class="why-item-desc">All projects score 90+ on Google PageSpeed. We obsess over Core Web Vitals, SEO, and real-world performance.</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" style="background:rgba(217,119,6,.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="why-item-title">White-Label for Agencies</div>
+              <div class="why-item-desc">Scalable white-label development partnerships — your brand, our execution, zero client visibility.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal-right">
+        <div class="why-big-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--gradient-hero);display:flex;align-items:center;justify-content:center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="why-big-title" style="font-size:18px;margin-bottom:2px">Performance Report</div>
+              <div style="font-size:12px;color:var(--ink-30)">Average across all projects</div>
+            </div>
+          </div>
+          <div class="why-metric-grid">
+            <div class="why-metric"><div class="why-metric-val">98</div><div class="why-metric-lbl">PageSpeed Score</div></div>
+            <div class="why-metric"><div class="why-metric-val">4.7%</div><div class="why-metric-lbl">Avg Conversion</div></div>
+            <div class="why-metric"><div class="why-metric-val">21d</div><div class="why-metric-lbl">Avg Delivery</div></div>
+            <div class="why-metric"><div class="why-metric-val">0.8s</div><div class="why-metric-lbl">Load Time</div></div>
+          </div>
+          <div style="margin-top:24px">
+            <div class="why-bar-row">
+              <div class="why-bar-lbl"><span>SEO Optimization</span><span style="color:var(--blue)">95%</span></div>
+              <div class="why-bar-track"><div class="why-bar-fill" style="width:95%"></div></div>
+            </div>
+            <div class="why-bar-row">
+              <div class="why-bar-lbl"><span>Client Satisfaction</span><span style="color:var(--blue)">98%</span></div>
+              <div class="why-bar-track"><div class="why-bar-fill" style="width:98%"></div></div>
+            </div>
+            <div class="why-bar-row">
+              <div class="why-bar-lbl"><span>On-Time Delivery</span><span style="color:var(--blue)">96%</span></div>
+              <div class="why-bar-track"><div class="why-bar-fill" style="width:96%"></div></div>
+            </div>
+            <div class="why-bar-row">
+              <div class="why-bar-lbl"><span>UI/UX Quality</span><span style="color:var(--blue)">99%</span></div>
+              <div class="why-bar-track"><div class="why-bar-fill" style="width:99%"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding:20px;background:var(--bg);border-radius:var(--r-md);display:flex;align-items:center;gap:16px">
+            <div style="font-size:32px">⭐</div>
+            <div>
+              <div style="font-size:22px;font-weight:700;letter-spacing:-.04em">4.9 / 5.0</div>
+              <div style="font-size:13px;color:var(--ink-60);margin-top:2px">Based on 180+ client reviews</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     PORTFOLIO
+══════════════════════════════════════════════════════════ -->
+<section id="portfolio" class="section">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px" class="reveal">
+      <div>
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Projects That<br><em>Speak for Themselves</em></h2>
+      </div>
+      <a href="#cta-banner" class="btn btn-outline">See All Projects</a>
+    </div>
+    <div class="portfolio-filters reveal">
+      <button class="filter-btn active" onclick="filterPort(this,'all')">All Work</button>
+      <button class="filter-btn" onclick="filterPort(this,'ecom')">Ecommerce</button>
+      <button class="filter-btn" onclick="filterPort(this,'web')">Websites</button>
+      <button class="filter-btn" onclick="filterPort(this,'shopify')">Shopify</button>
+      <button class="filter-btn" onclick="filterPort(this,'wp')">WordPress</button>
+    </div>
+    <div class="portfolio-grid" id="portfolio-grid">
+      <div class="portfolio-item port-bg-1" data-cat="ecom">
+        <div class="port-placeholder">
+          <div class="icon">🛍️</div>
+          <h4>LuxeCart Ecommerce</h4>
+          <p>Fashion Brand · Shopify Plus</p>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>LuxeCart Premium Store</h3>
+          <p>Shopify Plus · Fashion Brand</p>
+          <span class="portfolio-tag">Ecommerce</span>
+        </div>
+      </div>
+      <div class="portfolio-item port-bg-2" data-cat="web">
+        <div class="port-placeholder">
+          <div class="icon">🚀</div>
+          <h4>NovaTech SaaS Platform</h4>
+          <p>B2B SaaS · React + Next.js</p>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>NovaTech SaaS Platform</h3>
+          <p>React + Next.js · B2B</p>
+          <span class="portfolio-tag">Website</span>
+        </div>
+      </div>
+      <div class="portfolio-item port-bg-3" data-cat="shopify">
+        <div class="port-placeholder">
+          <div class="icon">💎</div>
+          <h4>VexaShop Jewellery</h4>
+          <p>Shopify · Luxury Goods</p>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>VexaShop Luxury Store</h3>
+          <p>Shopify · Luxury Goods</p>
+          <span class="portfolio-tag">Shopify</span>
+        </div>
+      </div>
+      <div class="portfolio-item port-bg-4" data-cat="wp">
+        <div class="port-placeholder">
+          <div class="icon">📰</div>
+          <h4>Meridian Media Hub</h4>
+          <p>WordPress · Publishing</p>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>Meridian Media Hub</h3>
+          <p>WordPress · Publishing</p>
+          <span class="portfolio-tag">WordPress</span>
+        </div>
+      </div>
+      <div class="portfolio-item port-bg-5" data-cat="ecom">
+        <div class="port-placeholder">
+          <div class="icon">🏋️</div>
+          <h4>FitPulse Store</h4>
+          <p>WooCommerce · Fitness</p>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>FitPulse Fitness Store</h3>
+          <p>WooCommerce · Fitness</p>
+          <span class="portfolio-tag">Ecommerce</span>
+        </div>
+      </div>
+      <div class="portfolio-item port-bg-6" data-cat="web">
+        <div class="port-placeholder">
+          <div class="icon">🏦</div>
+          <h4>Finlance FinTech App</h4>
+          <p>Custom CMS · Finance</p>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>Finlance FinTech App</h3>
+          <p>Custom CMS · Finance</p>
+          <span class="portfolio-tag">Website</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════════ -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="testi-header reveal">
+      <div>
+        <span class="section-label">Client Reviews</span>
+        <h2 class="section-title">Loved by Brands<br><em>Around the World</em></h2>
+      </div>
+      <div style="display:flex;gap:24px;align-items:center">
+        <div style="text-align:center">
+          <div style="font-size:40px;font-weight:700;letter-spacing:-.04em">4.9</div>
+          <div style="display:flex;gap:3px;justify-content:center;margin-top:4px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div style="font-size:12px;color:var(--ink-60);margin-top:4px">180+ reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-track-wrap">
+      <div class="testi-track" id="testi-track">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">ITcrista infoX completely transformed our online store. Revenue increased 147% within 3 months of launch. The team was incredibly professional and the UI is absolutely stunning.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#2563EB,#4F46E5)">SK</div>
+            <div><div class="testi-name">Sarah Kimura</div><div class="testi-role">CEO, LuxeCart · United Kingdom</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">The Shopify store they built for us loads in under 1 second and our conversion rate jumped from 1.2% to 4.7%. Hands down the best dev agency we've worked with in 8 years.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#7C3AED,#06B6D4)">MJ</div>
+            <div><div class="testi-name">Marcus Jensen</div><div class="testi-role">Founder, FitPulse · Germany</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">Exceptional white-label partner for our agency. They deliver pixel-perfect work on time, every time. Our clients think it's our in-house team — that's the best compliment possible.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#059669,#2563EB)">AP</div>
+            <div><div class="testi-name">Alex Petrova</div><div class="testi-role">Director, Amplio Agency · Canada</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">We needed a complex B2B SaaS website in 3 weeks. ITcrista infoX delivered in 19 days and it looked like it took 6 months. The quality, attention to detail, and communication were flawless.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#D97706,#7C3AED)">RN</div>
+            <div><div class="testi-name">Rahul Nair</div><div class="testi-role">CTO, CloudAxis · India</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">Our Magento migration was completely seamless. Zero downtime, 40% faster page loads, and a checkout flow that reduced cart abandonment by 28%. Incredible results.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#06B6D4,#4F46E5)">EL</div>
+            <div><div class="testi-name">Emma Laurent</div><div class="testi-role">Ecommerce Manager, StyleHive · France</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-controls">
+      <button class="testi-btn" id="testi-prev" onclick="moveTestimonial(-1)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="testi-btn" id="testi-next" onclick="moveTestimonial(1)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="testi-dots" id="testi-dots"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     PROCESS
+══════════════════════════════════════════════════════════ -->
+<section id="process" class="section">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label" style="justify-content:center">How We Work</span>
+      <h2 class="section-title">Our Battle-Tested<br><em>6-Step Process</em></h2>
+      <p class="section-body" style="margin:16px auto 0">Clear, transparent, and efficient — from discovery to launch in record time.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal stagger-1">
+        <div class="process-num">01</div>
+        <div class="process-step-title">Discovery</div>
+        <div class="process-step-desc">Deep-dive into your goals, audience, and competition to build the perfect strategy.</div>
+      </div>
+      <div class="process-step reveal stagger-2">
+        <div class="process-num">02</div>
+        <div class="process-step-title">Design</div>
+        <div class="process-step-desc">Wireframes, UI mockups, and design system creation with your feedback loop.</div>
+      </div>
+      <div class="process-step reveal stagger-3">
+        <div class="process-num">03</div>
+        <div class="process-step-title">Development</div>
+        <div class="process-step-desc">Clean, scalable code with daily progress updates and staging previews.</div>
+      </div>
+      <div class="process-step reveal stagger-4">
+        <div class="process-num">04</div>
+        <div class="process-step-title">Testing</div>
+        <div class="process-step-desc">Rigorous QA across devices, browsers, speed, and security audits.</div>
+      </div>
+      <div class="process-step reveal stagger-5">
+        <div class="process-num">05</div>
+        <div class="process-step-title">Launch</div>
+        <div class="process-step-desc">Smooth deployment with zero downtime and a live performance check.</div>
+      </div>
+      <div class="process-step reveal stagger-6">
+        <div class="process-num">06</div>
+        <div class="process-step-title">Support</div>
+        <div class="process-step-desc">Ongoing maintenance, analytics, and growth partnership post-launch.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     TECHNOLOGIES
+══════════════════════════════════════════════════════════ -->
+<section id="tech" class="section">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label" style="justify-content:center">Tech Stack</span>
+      <h2 class="section-title">Technologies We<br><em>Master</em></h2>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card reveal stagger-1"><span class="tech-logo">🛍</span><div class="tech-name">Shopify</div><div class="tech-type">Ecommerce</div></div>
+      <div class="tech-card reveal stagger-2"><span class="tech-logo">🔷</span><div class="tech-name">WordPress</div><div class="tech-type">CMS</div></div>
+      <div class="tech-card reveal stagger-3"><span class="tech-logo">⚛️</span><div class="tech-name">React</div><div class="tech-type">Frontend</div></div>
+      <div class="tech-card reveal stagger-4"><span class="tech-logo">▲</span><div class="tech-name">Next.js</div><div class="tech-type">Full-stack</div></div>
+      <div class="tech-card reveal stagger-5"><span class="tech-logo">🟢</span><div class="tech-name">Node.js</div><div class="tech-type">Backend</div></div>
+      <div class="tech-card reveal stagger-6"><span class="tech-logo">🔴</span><div class="tech-name">Laravel</div><div class="tech-type">Backend</div></div>
+      <div class="tech-card reveal stagger-1"><span class="tech-logo">🛒</span><div class="tech-name">WooCommerce</div><div class="tech-type">Ecommerce</div></div>
+      <div class="tech-card reveal stagger-2"><span class="tech-logo">🔶</span><div class="tech-name">Magento</div><div class="tech-type">Enterprise</div></div>
+      <div class="tech-card reveal stagger-3"><span class="tech-logo">🎨</span><div class="tech-name">Figma</div><div class="tech-type">Design</div></div>
+      <div class="tech-card reveal stagger-4"><span class="tech-logo">💨</span><div class="tech-name">Tailwind</div><div class="tech-type">CSS</div></div>
+      <div class="tech-card reveal stagger-5"><span class="tech-logo">🐘</span><div class="tech-name">PostgreSQL</div><div class="tech-type">Database</div></div>
+      <div class="tech-card reveal stagger-6"><span class="tech-logo">☁️</span><div class="tech-name">AWS</div><div class="tech-type">Cloud</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     PRICING
+══════════════════════════════════════════════════════════ -->
+<section id="pricing" class="section" style="background:var(--bg)">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label" style="justify-content:center">Pricing</span>
+      <h2 class="section-title">Transparent Packages,<br><em>Zero Hidden Costs</em></h2>
+      <p class="section-body" style="margin:16px auto 0;max-width:480px">Choose a plan that fits your stage or reach out for a custom quote tailored to your exact needs.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal stagger-1">
+        <div class="pricing-plan">Starter</div>
+        <div class="pricing-price"><sup>$</sup>1,499<sub>/project</sub></div>
+        <p class="pricing-desc">Perfect for startups and small businesses looking to establish a strong online presence.</p>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Up to 8 custom pages</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Responsive design</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Basic SEO setup</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contact form integration</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>30-day support</div>
+        </div>
+        <a href="#cta-banner" class="btn btn-outline" style="width:100%;justify-content:center">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured reveal stagger-2">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-plan">Growth</div>
+        <div class="pricing-price" style="color:#fff"><sup>$</sup>3,999<sub>/project</sub></div>
+        <p class="pricing-desc">For scaling ecommerce brands and businesses serious about digital growth.</p>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full custom website or store</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Advanced animations &amp; UI</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full SEO + Speed optimization</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Payment &amp; CRM integrations</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>60-day priority support</div>
+        </div>
+        <a href="#cta-banner" class="btn btn-primary" style="width:100%;justify-content:center;background:linear-gradient(135deg,#06B6D4,#2563EB)">Start Growth Plan</a>
+      </div>
+
+      <div class="pricing-card reveal stagger-3">
+        <div class="pricing-plan">Enterprise</div>
+        <div class="pricing-price"><sup>$</sup>Custom</div>
+        <p class="pricing-desc">For large-scale platforms, agencies, and international brands with complex requirements.</p>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Dedicated project team</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Custom architecture &amp; CMS</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>White-label development</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>SLA &amp; 24/7 monitoring</div>
+          <div class="pricing-feature"><div class="pf-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>12-month retainer options</div>
+        </div>
+        <a href="#cta-banner" class="btn btn-outline" style="width:100%;justify-content:center">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════════════════════ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="faq-layout">
+      <div>
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Questions We<br><em>Get Asked Often</em></h2>
+        <div class="faq-list" style="margin-top:40px">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">How long does a typical project take? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Most projects are completed between 2–6 weeks depending on complexity. A simple website can be delivered in 10–14 days, while a full ecommerce build typically takes 3–5 weeks. We share a detailed timeline during our discovery call.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Do you offer white-label development for agencies? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Yes! We are a trusted white-label development partner for agencies worldwide. We operate under complete confidentiality — your clients will never know we're involved. We sign NDAs and work within your processes.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">What platforms do you specialize in? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>We specialize in Shopify, Shopify Plus, WordPress, WooCommerce, Magento, and custom Next.js / React applications. We're platform-agnostic and will always recommend the best fit for your business.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Will my website be SEO-friendly and fast? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Absolutely. Every project ships with full technical SEO setup, schema markup, Core Web Vitals optimization, and we target 90+ scores on Google PageSpeed. Average load time across our projects is under 1 second.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">What happens after the website is launched? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>We offer post-launch support ranging from 30 days (Starter) to 12-month retainer plans (Enterprise). Our care plans include security monitoring, backups, updates, bug fixes, and performance tuning.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">How do you handle project communication? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Every client gets a dedicated project manager. We communicate via Slack or WhatsApp with daily/weekly updates and share a Notion board for full project transparency. You're always in the loop.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-cta-block reveal-right">
+        <div class="faq-cta-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 style="font-size:22px;font-weight:700;letter-spacing:-.03em;margin-bottom:12px">Still have questions?</h3>
+        <p style="font-size:15px;color:var(--ink-60);line-height:1.7;margin-bottom:28px">Drop us a message and our team will respond within 4 hours — guaranteed.</p>
+        <a href="mailto:hello@itcristainfox.com" class="btn btn-primary" style="width:100%;justify-content:center">Email Us Directly</a>
+        <div style="margin-top:20px;padding:16px;background:var(--bg);border-radius:var(--r-md);display:flex;align-items:center;gap:12px">
+          <div style="font-size:24px">💬</div>
+          <div>
+            <div style="font-size:13px;font-weight:600">Live Chat Available</div>
+            <div style="font-size:12px;color:var(--ink-60);margin-top:2px">Mon – Fri · 9am – 7pm IST</div>
+          </div>
+          <div class="badge" style="margin-left:auto"><span class="dot"></span>Online</div>
+        </div>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;gap:12px;align-items:center;font-size:14px;color:var(--ink-60)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.69 3.26a2 2 0 0 1 1.97-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l1-1.03a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            +91 98765 43210
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;font-size:14px;color:var(--ink-60)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hello@itcristainfox.com
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════════════════════ -->
+<section id="cta-banner">
+  <div class="cta-bg">
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+  </div>
+  <div class="container">
+    <div class="cta-inner reveal">
+      <span class="section-label" style="justify-content:center">Ready to Start?</span>
+      <h2 class="cta-title">Let's Build Something<br><em>Extraordinary</em> Together</h2>
+      <p class="cta-sub">From concept to launch — we'll craft a digital experience that sets you apart from every competitor.</p>
+      <div class="cta-actions">
+        <a href="mailto:hello@itcristainfox.com" class="btn btn-white">
+          Start Your Project
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8H12M12 8L8.5 4.5M12 8L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#portfolio" class="btn btn-ghost">View Our Portfolio</a>
+      </div>
+      <div class="cta-trust">
+        <div class="cta-trust-item"><div class="cta-trust-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>100% NDA Protected</div>
+        <div class="cta-trust-item"><div class="cta-trust-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>4h Response Time</div>
+        <div class="cta-trust-item"><div class="cta-trust-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></div>100% Satisfaction Guarantee</div>
+        <div class="cta-trust-item"><div class="cta-trust-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>Free Project Consultation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div style="width:32px;height:32px;border-radius:9px;background:var(--gradient-hero);display:flex;align-items:center;justify-content:center">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2L17 6V14L10 18L3 14V6L10 2Z" fill="white" fill-opacity=".9"/><path d="M10 6L14 8.5V13.5L10 16L6 13.5V8.5L10 6Z" fill="white"/></svg>
+          </div>
+          ITcrista <span style="color:var(--blue-light)">infoX</span>
+        </div>
+        <p class="footer-tagline">Premium IT agency crafting high-performance websites, ecommerce stores, and digital experiences for ambitious brands worldwide.</p>
+        <div class="footer-socials">
+          <div class="social-btn" title="LinkedIn">in</div>
+          <div class="social-btn" title="Twitter">𝕏</div>
+          <div class="social-btn" title="Instagram">IG</div>
+          <div class="social-btn" title="Behance">Be</div>
+          <div class="social-btn" title="GitHub">GH</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="#">Custom Development</a>
+          <a href="#">Ecommerce Stores</a>
+          <a href="#">Shopify Development</a>
+          <a href="#">WordPress Development</a>
+          <a href="#">UI/UX Design</a>
+          <a href="#">SEO Optimization</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Our Work</a>
+          <a href="#">Process</a>
+          <a href="#">Pricing</a>
+          <a href="#">Careers</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:hello@itcristainfox.com">hello@itcristainfox.com</a>
+          <a href="tel:+919876543210">+91 98765 43210</a>
+          <a href="#">WhatsApp Chat</a>
+          <a href="#">Schedule a Call</a>
+          <a href="#">Free Consultation</a>
+        </div>
+        <div style="margin-top:20px">
+          <div class="badge"><span class="dot"></span>Available for Projects</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 ITcrista infoX. Crafted with ♥ for ambitious brands.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════ -->
+<script>
+/* ── NAV SCROLL ─────────────────────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+/* ── MOBILE MENU ────────────────────────────────────────── */
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+/* ── CURSOR ─────────────────────────────────────────────── */
+const cursor = document.getElementById('cursor');
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+let mx = -100, my = -100;
+if (window.matchMedia('(pointer:fine)').matches) {
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx}px,${my}px)`;
+  });
+  document.querySelectorAll('a,button,.svc-card,.tech-card,.portfolio-item,.why-item').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+}
+
+/* ── REVEAL ON SCROLL ───────────────────────────────────── */
+const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+/* ── COUNTERS ────────────────────────────────────────────── */
+const counters = document.querySelectorAll('.counter');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const dur = 1800;
+      const step = dur / target;
+      let count = 0;
+      const timer = setInterval(() => {
+        count = Math.min(count + Math.ceil(target / 60), target);
+        el.textContent = count;
+        if (count >= target) clearInterval(timer);
+      }, dur / 60);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => counterObserver.observe(c));
+
+/* ── FAQ ─────────────────────────────────────────────────── */
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ── PORTFOLIO FILTER ───────────────────────────────────── */
+function filterPort(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = '';
+      item.style.opacity = '0';
+      item.style.transform = 'scale(.96)';
+      setTimeout(() => { item.style.opacity='1'; item.style.transform='scale(1)'; item.style.transition='all .4s'; }, 10);
+    } else {
+      item.style.opacity = '0';
+      item.style.transform = 'scale(.96)';
+      setTimeout(() => { item.style.display='none'; }, 400);
+    }
+  });
+}
+
+/* ── TESTIMONIALS SLIDER ────────────────────────────────── */
+let testiIdx = 0;
+const testiTrack = document.getElementById('testi-track');
+const testiCards = testiTrack.querySelectorAll('.testi-card');
+const testiCount = testiCards.length;
+const testiDotsEl = document.getElementById('testi-dots');
+
+function buildDots() {
+  testiDotsEl.innerHTML = '';
+  testiCards.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'testi-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => { testiIdx = i; updateTesti(); };
+    testiDotsEl.appendChild(d);
+  });
+}
+buildDots();
+
+function getCardW() {
+  const w = window.innerWidth;
+  if (w < 768) return w - 48;
+  return 400;
+}
+
+function updateTesti() {
+  const w = getCardW() + 24;
+  testiTrack.style.transform = `translateX(-${testiIdx * w}px)`;
+  testiDotsEl.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === testiIdx));
+}
+function moveTestimonial(dir) {
+  testiIdx = (testiIdx + dir + testiCount) % testiCount;
+  updateTesti();
+}
+window.addEventListener('resize', updateTesti);
+
+// Auto slide
+setInterval(() => { testiIdx = (testiIdx + 1) % testiCount; updateTesti(); }, 5000);
+
+/* ── PARTICLES ───────────────────────────────────────────── */
+(function() {
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: Math.random() * 1200,
+      y: Math.random() * 800,
+      r: Math.random() * 1.5 + .5,
+      vx: (Math.random() - .5) * .3,
+      vy: (Math.random() - .5) * .3,
+      alpha: Math.random() * .5 + .1
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(37,99,235,${p.alpha})`;
+      ctx.fill();
+    });
+
+    // connections
+    particles.forEach((a, i) => {
+      particles.slice(i + 1).forEach(b => {
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(37,99,235,${.08 * (1 - dist/120)})`;
+          ctx.lineWidth = .5;
+          ctx.stroke();
+        }
+      });
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── HERO PARALLAX ───────────────────────────────────────── */
+document.addEventListener('mousemove', e => {
+  const mx = (e.clientX / window.innerWidth - .5) * 20;
+  const my = (e.clientY / window.innerHeight - .5) * 20;
+  document.querySelectorAll('.hero-blob-1').forEach(el => el.style.transform = `translate(${mx * .5}px,${my * .5}px)`);
+  document.querySelectorAll('.hero-blob-2').forEach(el => el.style.transform = `translate(${-mx * .3}px,${-my * .3}px)`);
+});
+</script>
+</body>
+</html>
